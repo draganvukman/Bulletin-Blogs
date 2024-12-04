@@ -3,7 +3,10 @@
 <!-- Business-Section-Hero -->
 <section class="business-hero-section">
   <div class="business-hero business-hero-content">
-    <img src="./images/business-hero-page.jpeg" alt="Business" />
+    <img
+      src="{{ url_for('static', filename='images/business-hero-page.jpeg') }}"
+      alt="Business"
+    />
     <div class="business-hero-title">Business Blogs & Articles</div>
   </div>
 </section>
@@ -20,26 +23,22 @@
 
       <div class="content">
         <div id="tabcontent1" data-tab="1" class="tabcontent active">
+          {% for blog in business_blogs %}
           <a href="#" class="business-tab-card">
             <div class="business-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Business" />
-              <p class="business-tab-card-author">John Doe</p>
+              <img
+                src="{{ url_for('static', filename='images/author-image.jpeg') }}"
+                alt=""
+              />
+              <p class="business-tab-card-author">{{ blog.author }}</p>
               <p class="business-tab-card-time">8 hours ago</p>
             </div>
             <div class="business-tab-card-body">
               <div class="business-tab-card-body-desc">
-                <h2 class="business-tab-card-title">
-                  Meeting the Challenge of Disruptive Change
-                </h2>
-                <p class="business-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
+                <h2 class="business-tab-card-title">{{ blog.title }}</h2>
+                <p class="business-tab-card-text">{{ blog.content }}</p>
                 <div class="business-tab-card-info">
-                  <div class="business-tab-card-tag">Business</div>
+                  <div class="business-tab-card-tag">{{ blog.category }}</div>
                   <div class="business-tab-card-read">15 min read</div>
                   <span class="business-tab-card-bookmark"
                     ><i class="fas fa-bookmark"></i
@@ -48,197 +47,32 @@
               </div>
 
               <div class="business-tab-card-body-img">
-                <img src="./images/business-blog-2.avif" alt="Business" />
+                <img
+                  src="{{ url_for('static', filename=blog.imageLink) }}"
+                  alt="{{ blog.title }}"
+                />
               </div>
             </div>
           </a>
-
-          <a href="#" class="business-tab-card">
-            <div class="business-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Business" />
-              <p class="business-tab-card-author">John Doe</p>
-              <p class="business-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="business-tab-card-body">
-              <div class="business-tab-card-body-desc">
-                <h2 class="business-tab-card-title">
-                  Meeting the Challenge of Disruptive Change
-                </h2>
-                <p class="business-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="business-tab-card-info">
-                  <div class="business-tab-card-tag">Business</div>
-                  <div class="business-tab-card-read">15 min read</div>
-                  <span class="business-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="business-tab-card-body-img">
-                <img src="./images/business-blog-2.avif" alt="Business" />
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="business-tab-card">
-            <div class="business-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Business" />
-              <p class="business-tab-card-author">John Doe</p>
-              <p class="business-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="business-tab-card-body">
-              <div class="business-tab-card-body-desc">
-                <h2 class="business-tab-card-title">
-                  Meeting the Challenge of Disruptive Change
-                </h2>
-                <p class="business-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="business-tab-card-info">
-                  <div class="business-tab-card-tag">Business</div>
-                  <div class="business-tab-card-read">15 min read</div>
-                  <span class="business-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="business-tab-card-body-img">
-                <img src="./images/business-blog-2.avif" alt="Business" />
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="business-tab-card">
-            <div class="business-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Business" />
-              <p class="business-tab-card-author">John Doe</p>
-              <p class="business-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="business-tab-card-body">
-              <div class="business-tab-card-body-desc">
-                <h2 class="business-tab-card-title">
-                  Meeting the Challenge of Disruptive Change
-                </h2>
-                <p class="business-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="business-tab-card-info">
-                  <div class="business-tab-card-tag">Business</div>
-                  <div class="business-tab-card-read">15 min read</div>
-                  <span class="business-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="business-tab-card-body-img">
-                <img src="./images/business-blog-2.avif" alt="Business" />
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="business-tab-card">
-            <div class="business-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Business" />
-              <p class="business-tab-card-author">John Doe</p>
-              <p class="business-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="business-tab-card-body">
-              <div class="business-tab-card-body-desc">
-                <h2 class="business-tab-card-title">
-                  Meeting the Challenge of Disruptive Change
-                </h2>
-                <p class="business-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="business-tab-card-info">
-                  <div class="business-tab-card-tag">Business</div>
-                  <div class="business-tab-card-read">15 min read</div>
-                  <span class="business-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="business-tab-card-body-img">
-                <img src="./images/business-blog-2.avif" alt="Business" />
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="business-tab-card">
-            <div class="business-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Business" />
-              <p class="business-tab-card-author">John Doe</p>
-              <p class="business-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="business-tab-card-body">
-              <div class="business-tab-card-body-desc">
-                <h2 class="business-tab-card-title">
-                  Meeting the Challenge of Disruptive Change
-                </h2>
-                <p class="business-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="business-tab-card-info">
-                  <div class="business-tab-card-tag">Business</div>
-                  <div class="business-tab-card-read">15 min read</div>
-                  <span class="business-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="business-tab-card-body-img">
-                <img src="./images/business-blog-2.avif" alt="Business" />
-              </div>
-            </div>
-          </a>
+          {% endfor %}
         </div>
         <div id="tabcontent2" data-tab="2" class="tabcontent">
+          {% for blog in business_blogs %}
           <a href="#" class="business-tab-card">
             <div class="business-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Business" />
-              <p class="business-tab-card-author">John Doe</p>
+              <img
+                src="{{ url_for('static', filename='images/author-image.jpeg') }}"
+                alt=""
+              />
+              <p class="business-tab-card-author">{{ blog.author }}</p>
               <p class="business-tab-card-time">8 hours ago</p>
             </div>
             <div class="business-tab-card-body">
               <div class="business-tab-card-body-desc">
-                <h2 class="business-tab-card-title">
-                  Meeting the Challenge of Disruptive Change
-                </h2>
-                <p class="business-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
+                <h2 class="business-tab-card-title">{{ blog.title }}</h2>
+                <p class="business-tab-card-text">{{ blog.content }}</p>
                 <div class="business-tab-card-info">
-                  <div class="business-tab-card-tag">Business</div>
+                  <div class="business-tab-card-tag">{{ blog.category }}</div>
                   <div class="business-tab-card-read">15 min read</div>
                   <span class="business-tab-card-bookmark"
                     ><i class="fas fa-bookmark"></i
@@ -247,131 +81,32 @@
               </div>
 
               <div class="business-tab-card-body-img">
-                <img src="./images/business-blog-1.avif" alt="Business" />
+                <img
+                  src="{{ url_for('static', filename=blog.imageLink) }}"
+                  alt="{{ blog.title }}"
+                />
               </div>
             </div>
           </a>
-
-          <a href="#" class="business-tab-card">
-            <div class="business-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Business" />
-              <p class="business-tab-card-author">John Doe</p>
-              <p class="business-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="business-tab-card-body">
-              <div class="business-tab-card-body-desc">
-                <h2 class="business-tab-card-title">
-                  Meeting the Challenge of Disruptive Change
-                </h2>
-                <p class="business-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="business-tab-card-info">
-                  <div class="business-tab-card-tag">Business</div>
-                  <div class="business-tab-card-read">15 min read</div>
-                  <span class="business-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="business-tab-card-body-img">
-                <img src="./images/business-blog-1.avif" alt="Business" />
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="business-tab-card">
-            <div class="business-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Business" />
-              <p class="business-tab-card-author">John Doe</p>
-              <p class="business-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="business-tab-card-body">
-              <div class="business-tab-card-body-desc">
-                <h2 class="business-tab-card-title">
-                  Meeting the Challenge of Disruptive Change
-                </h2>
-                <p class="business-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="business-tab-card-info">
-                  <div class="business-tab-card-tag">Business</div>
-                  <div class="business-tab-card-read">15 min read</div>
-                  <span class="business-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="business-tab-card-body-img">
-                <img src="./images/business-blog-1.avif" alt="Business" />
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="business-tab-card">
-            <div class="business-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Business" />
-              <p class="business-tab-card-author">John Doe</p>
-              <p class="business-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="business-tab-card-body">
-              <div class="business-tab-card-body-desc">
-                <h2 class="business-tab-card-title">
-                  Meeting the Challenge of Disruptive Change
-                </h2>
-                <p class="business-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="business-tab-card-info">
-                  <div class="business-tab-card-tag">Business</div>
-                  <div class="business-tab-card-read">15 min read</div>
-                  <span class="business-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="business-tab-card-body-img">
-                <img src="./images/business-blog-3.avif" alt="Business" />
-              </div>
-            </div>
-          </a>
+          {% endfor %}
         </div>
         <div id="tabcontent3" data-tab="3" class="tabcontent">
+          {% for blog in business_blogs %}
           <a href="#" class="business-tab-card">
             <div class="business-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Business" />
-              <p class="business-tab-card-author">John Doe</p>
+              <img
+                src="{{ url_for('static', filename='images/author-image.jpeg') }}"
+                alt=""
+              />
+              <p class="business-tab-card-author">{{ blog.author }}</p>
               <p class="business-tab-card-time">8 hours ago</p>
             </div>
             <div class="business-tab-card-body">
               <div class="business-tab-card-body-desc">
-                <h2 class="business-tab-card-title">
-                  Meeting the Challenge of Disruptive Change
-                </h2>
-                <p class="business-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
+                <h2 class="business-tab-card-title">{{ blog.title }}</h2>
+                <p class="business-tab-card-text">{{ blog.content }}</p>
                 <div class="business-tab-card-info">
-                  <div class="business-tab-card-tag">Business</div>
+                  <div class="business-tab-card-tag">{{ blog.category }}</div>
                   <div class="business-tab-card-read">15 min read</div>
                   <span class="business-tab-card-bookmark"
                     ><i class="fas fa-bookmark"></i
@@ -380,43 +115,14 @@
               </div>
 
               <div class="business-tab-card-body-img">
-                <img src="./images/business-blog-3.avif" alt="Business" />
+                <img
+                  src="{{ url_for('static', filename=blog.imageLink) }}"
+                  alt="{{ blog.title }}"
+                />
               </div>
             </div>
           </a>
-
-          <a href="#" class="business-tab-card">
-            <div class="business-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Business" />
-              <p class="business-tab-card-author">John Doe</p>
-              <p class="business-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="business-tab-card-body">
-              <div class="business-tab-card-body-desc">
-                <h2 class="business-tab-card-title">
-                  Meeting the Challenge of Disruptive Change
-                </h2>
-                <p class="business-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="business-tab-card-info">
-                  <div class="business-tab-card-tag">Business</div>
-                  <div class="business-tab-card-read">15 min read</div>
-                  <span class="business-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="business-tab-card-body-img">
-                <img src="./images/business-blog-3.avif" alt="Business" />
-              </div>
-            </div>
-          </a>
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -428,12 +134,12 @@
   <div class="container">
     <div class="newsletter-content">
       <img
-        src="./images/abstract-design-trimmy.png"
+        src="{{ url_for('static', filename='images/abstract-design-trimmy.png') }}"
         alt="Business"
         class="design-img-top"
       />
       <img
-        src="./images/abstract-design-trimmy.png"
+        src="{{ url_for('static', filename='images/abstract-design-trimmy.png') }}"
         alt="Business"
         class="design-img-bottom"
       />

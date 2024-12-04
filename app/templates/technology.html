@@ -3,7 +3,7 @@
 <!-- Tech-Section-Hero -->
 <section class="tech-hero-section">
   <div class="tech-hero tech-hero-content">
-    <img src="./images/tech-hero-page.jpeg" Technology />
+    <img src="{{ url_for('static', filename='images/tech-hero-page.jpeg') }}" />
     <div class="tech-hero-title">Tech Blogs & Articles</div>
   </div>
 </section>
@@ -20,26 +20,22 @@
 
       <div class="content">
         <div id="tabcontent1" data-tab="1" class="tabcontent-tech active">
-          <a href="/post.html" class="tech-tab-card">
+          {% for blog in technology_blogs %}
+
+          <a href="#" class="tech-tab-card">
             <div class="tech-tab-card-header">
-              <img src="./images/author-image.jpeg" Technology />
-              <p class="tech-tab-card-author">John Doe</p>
+              <img
+                src="{{ url_for('static', filename='images/author-image.jpeg') }}"
+              />
+              <p class="tech-tab-card-author">{{ blog.author }}</p>
               <p class="tech-tab-card-time">8 hours ago</p>
             </div>
             <div class="tech-tab-card-body">
               <div class="tech-tab-card-body-desc">
-                <h2 class="tech-tab-card-title">
-                  It’s Like GPT-3, but for Code—Fun, Fast, and Full of Flaws
-                </h2>
-                <p class="tech-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
+                <h2 class="tech-tab-card-title">{{ blog.title }}</h2>
+                <p class="tech-tab-card-text">{{ blog.content }}</p>
                 <div class="tech-tab-card-info">
-                  <div class="tech-tab-card-tag">Technology</div>
+                  <div class="tech-tab-card-tag">{{ blog.category }}</div>
                   <div class="tech-tab-card-read">15 min read</div>
                   <span class="tech-tab-card-bookmark"
                     ><i class="fas fa-bookmark"></i
@@ -48,197 +44,30 @@
               </div>
 
               <div class="tech-tab-card-body-img">
-                <img src="./images/tech-blog-2.jpeg" Technology />
+                <img
+                  src="{{ url_for('static', filename=blog.imageLink) }}"
+                  alt="{{ blog.title }}"
+                />
               </div>
             </div>
           </a>
-
-          <a href="/post.html" class="tech-tab-card">
-            <div class="tech-tab-card-header">
-              <img src="./images/author-image.jpeg" Technology />
-              <p class="tech-tab-card-author">John Doe</p>
-              <p class="tech-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="tech-tab-card-body">
-              <div class="tech-tab-card-body-desc">
-                <h2 class="tech-tab-card-title">
-                  It’s Like GPT-3, but for Code—Fun, Fast, and Full of Flaws
-                </h2>
-                <p class="tech-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="tech-tab-card-info">
-                  <div class="tech-tab-card-tag">Technology</div>
-                  <div class="tech-tab-card-read">15 min read</div>
-                  <span class="tech-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="tech-tab-card-body-img">
-                <img src="./images/tech-blog-2.jpeg" Technology />
-              </div>
-            </div>
-          </a>
-
-          <a href="/post.html" class="tech-tab-card">
-            <div class="tech-tab-card-header">
-              <img src="./images/author-image.jpeg" Technology />
-              <p class="tech-tab-card-author">John Doe</p>
-              <p class="tech-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="tech-tab-card-body">
-              <div class="tech-tab-card-body-desc">
-                <h2 class="tech-tab-card-title">
-                  It’s Like GPT-3, but for Code—Fun, Fast, and Full of Flaws
-                </h2>
-                <p class="tech-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="tech-tab-card-info">
-                  <div class="tech-tab-card-tag">Technology</div>
-                  <div class="tech-tab-card-read">15 min read</div>
-                  <span class="tech-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="tech-tab-card-body-img">
-                <img src="./images/tech-blog-2.jpeg" Technology />
-              </div>
-            </div>
-          </a>
-
-          <a href="/post.html" class="tech-tab-card">
-            <div class="tech-tab-card-header">
-              <img src="./images/author-image.jpeg" Technology />
-              <p class="tech-tab-card-author">John Doe</p>
-              <p class="tech-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="tech-tab-card-body">
-              <div class="tech-tab-card-body-desc">
-                <h2 class="tech-tab-card-title">
-                  It’s Like GPT-3, but for Code—Fun, Fast, and Full of Flaws
-                </h2>
-                <p class="tech-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="tech-tab-card-info">
-                  <div class="tech-tab-card-tag">Technology</div>
-                  <div class="tech-tab-card-read">15 min read</div>
-                  <span class="tech-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="tech-tab-card-body-img">
-                <img src="./images/tech-blog-2.jpeg" Technology />
-              </div>
-            </div>
-          </a>
-
-          <a href="/post.html" class="tech-tab-card">
-            <div class="tech-tab-card-header">
-              <img src="./images/author-image.jpeg" Technology />
-              <p class="tech-tab-card-author">John Doe</p>
-              <p class="tech-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="tech-tab-card-body">
-              <div class="tech-tab-card-body-desc">
-                <h2 class="tech-tab-card-title">
-                  It’s Like GPT-3, but for Code—Fun, Fast, and Full of Flaws
-                </h2>
-                <p class="tech-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="tech-tab-card-info">
-                  <div class="tech-tab-card-tag">Technology</div>
-                  <div class="tech-tab-card-read">15 min read</div>
-                  <span class="tech-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="tech-tab-card-body-img">
-                <img src="./images/tech-blog-2.jpeg" Technology />
-              </div>
-            </div>
-          </a>
-
-          <a href="/post.html" class="tech-tab-card">
-            <div class="tech-tab-card-header">
-              <img src="./images/author-image.jpeg" Technology />
-              <p class="tech-tab-card-author">John Doe</p>
-              <p class="tech-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="tech-tab-card-body">
-              <div class="tech-tab-card-body-desc">
-                <h2 class="tech-tab-card-title">
-                  It’s Like GPT-3, but for Code—Fun, Fast, and Full of Flaws
-                </h2>
-                <p class="tech-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="tech-tab-card-info">
-                  <div class="tech-tab-card-tag">Technology</div>
-                  <div class="tech-tab-card-read">15 min read</div>
-                  <span class="tech-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="tech-tab-card-body-img">
-                <img src="./images/tech-blog-2.jpeg" Technology />
-              </div>
-            </div>
-          </a>
+          {% endfor %}
         </div>
         <div id="tabcontent2" data-tab="2" class="tabcontent-tech">
-          <a href="/post.html" class="tech-tab-card">
+          {% for blog in technology_blogs %}
+
+          <a href="#" class="tech-tab-card">
             <div class="tech-tab-card-header">
-              <img src="./images/author-image.jpeg" Technology />
-              <p class="tech-tab-card-author">John Doe</p>
+              <img src="./images/author-image.jpeg" />
+              <p class="tech-tab-card-author">{{ blog.author }}</p>
               <p class="tech-tab-card-time">8 hours ago</p>
             </div>
             <div class="tech-tab-card-body">
               <div class="tech-tab-card-body-desc">
-                <h2 class="tech-tab-card-title">
-                  It’s Like GPT-3, but for Code—Fun, Fast, and Full of Flaws
-                </h2>
-                <p class="tech-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
+                <h2 class="tech-tab-card-title">{{ blog.title }}</h2>
+                <p class="tech-tab-card-text">{{ blog.content }}</p>
                 <div class="tech-tab-card-info">
-                  <div class="tech-tab-card-tag">Technology</div>
+                  <div class="tech-tab-card-tag">{{ blog.category }}</div>
                   <div class="tech-tab-card-read">15 min read</div>
                   <span class="tech-tab-card-bookmark"
                     ><i class="fas fa-bookmark"></i
@@ -247,131 +76,30 @@
               </div>
 
               <div class="tech-tab-card-body-img">
-                <img src="./images/tech-blog-1.jpeg" Technology />
+                <img
+                  src="{{ url_for('static', filename=blog.imageLink) }}"
+                  alt="{{ blog.title }}"
+                />
               </div>
             </div>
           </a>
-
-          <a href="/post.html" class="tech-tab-card">
-            <div class="tech-tab-card-header">
-              <img src="./images/author-image.jpeg" Technology />
-              <p class="tech-tab-card-author">John Doe</p>
-              <p class="tech-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="tech-tab-card-body">
-              <div class="tech-tab-card-body-desc">
-                <h2 class="tech-tab-card-title">
-                  It’s Like GPT-3, but for Code—Fun, Fast, and Full of Flaws
-                </h2>
-                <p class="tech-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="tech-tab-card-info">
-                  <div class="tech-tab-card-tag">Technology</div>
-                  <div class="tech-tab-card-read">15 min read</div>
-                  <span class="tech-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="tech-tab-card-body-img">
-                <img src="./images/tech-blog-1.jpeg" Technology />
-              </div>
-            </div>
-          </a>
-
-          <a href="/post.html" class="tech-tab-card">
-            <div class="tech-tab-card-header">
-              <img src="./images/author-image.jpeg" Technology />
-              <p class="tech-tab-card-author">John Doe</p>
-              <p class="tech-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="tech-tab-card-body">
-              <div class="tech-tab-card-body-desc">
-                <h2 class="tech-tab-card-title">
-                  It’s Like GPT-3, but for Code—Fun, Fast, and Full of Flaws
-                </h2>
-                <p class="tech-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="tech-tab-card-info">
-                  <div class="tech-tab-card-tag">Technology</div>
-                  <div class="tech-tab-card-read">15 min read</div>
-                  <span class="tech-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="tech-tab-card-body-img">
-                <img src="./images/tech-blog-1.jpeg" Technology />
-              </div>
-            </div>
-          </a>
-
-          <a href="/post.html" class="tech-tab-card">
-            <div class="tech-tab-card-header">
-              <img src="./images/author-image.jpeg" Technology />
-              <p class="tech-tab-card-author">John Doe</p>
-              <p class="tech-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="tech-tab-card-body">
-              <div class="tech-tab-card-body-desc">
-                <h2 class="tech-tab-card-title">
-                  It’s Like GPT-3, but for Code—Fun, Fast, and Full of Flaws
-                </h2>
-                <p class="tech-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="tech-tab-card-info">
-                  <div class="tech-tab-card-tag">Technology</div>
-                  <div class="tech-tab-card-read">15 min read</div>
-                  <span class="tech-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="tech-tab-card-body-img">
-                <img src="./images/tech-blog-1.jpeg" Technology />
-              </div>
-            </div>
-          </a>
+          {% endfor %}
         </div>
         <div id="tabcontent3" data-tab="3" class="tabcontent-tech">
-          <a href="/post.html" class="tech-tab-card">
+          {% for blog in technology_blogs %}
+
+          <a href="#" class="tech-tab-card">
             <div class="tech-tab-card-header">
-              <img src="./images/author-image.jpeg" Technology />
-              <p class="tech-tab-card-author">John Doe</p>
+              <img src="./images/author-image.jpeg" />
+              <p class="tech-tab-card-author">{{ blog.author }}</p>
               <p class="tech-tab-card-time">8 hours ago</p>
             </div>
             <div class="tech-tab-card-body">
               <div class="tech-tab-card-body-desc">
-                <h2 class="tech-tab-card-title">
-                  It’s Like GPT-3, but for Code—Fun, Fast, and Full of Flaws
-                </h2>
-                <p class="tech-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
+                <h2 class="tech-tab-card-title">{{ blog.title }}</h2>
+                <p class="tech-tab-card-text">{{ blog.content }}</p>
                 <div class="tech-tab-card-info">
-                  <div class="tech-tab-card-tag">Technology</div>
+                  <div class="tech-tab-card-tag">{{ blog.category }}</div>
                   <div class="tech-tab-card-read">15 min read</div>
                   <span class="tech-tab-card-bookmark"
                     ><i class="fas fa-bookmark"></i
@@ -380,43 +108,14 @@
               </div>
 
               <div class="tech-tab-card-body-img">
-                <img src="./images/tech-blog-4.jpeg" Technology />
+                <img
+                  src="{{ url_for('static', filename=blog.imageLink) }}"
+                  alt="{{ blog.title }}"
+                />
               </div>
             </div>
           </a>
-
-          <a href="/post.html" class="tech-tab-card">
-            <div class="tech-tab-card-header">
-              <img src="./images/author-image.jpeg" Technology />
-              <p class="tech-tab-card-author">John Doe</p>
-              <p class="tech-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="tech-tab-card-body">
-              <div class="tech-tab-card-body-desc">
-                <h2 class="tech-tab-card-title">
-                  It’s Like GPT-3, but for Code—Fun, Fast, and Full of Flaws
-                </h2>
-                <p class="tech-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="tech-tab-card-info">
-                  <div class="tech-tab-card-tag">Technology</div>
-                  <div class="tech-tab-card-read">15 min read</div>
-                  <span class="tech-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="tech-tab-card-body-img">
-                <img src="./images/tech-blog-4.jpeg" Technology />
-              </div>
-            </div>
-          </a>
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -428,12 +127,12 @@
   <div class="container">
     <div class="newsletter-content">
       <img
-        src="./images/abstract-design-trimmy.png"
+        src="{{ url_for('static', filename='images/abstract-design-trimmy.png') }}"
         Technology
         class="design-img-top"
       />
       <img
-        src="./images/abstract-design-trimmy.png"
+        src="{{ url_for('static', filename='images/abstract-design-trimmy.png') }}"
         Technology
         class="design-img-bottom"
       />

@@ -5,11 +5,18 @@
   <div class="container">
     <div class="contact-content">
       <div class="contact-img">
-        <img src="./images/contact-us-trimmy.png" alt="" />
+        <img
+          src="{{ url_for('static', filename='images/contact-us-trimmy.png') }}"
+          alt=""
+        />
       </div>
       <div class="contact-item">
         <h2 class="contact-title">Contact Us</h2>
-        <form id="contact-form">
+        <form
+          action="{{ url_for('user_routes.contact') }}"
+          method="post"
+          id="contact-form"
+        >
           <div class="contact-form-control">
             <label for="name">Name</label>
             <input type="text" name="name" id="name" required />
@@ -40,6 +47,14 @@
     </div>
   </div>
 </section>
+{% with messages = get_flashed_messages(with_categories=true) %} {% if messages
+%}
+<ul class="success-message">
+  {% for category, message in messages %}
+  <li class="{{ category }}">{{ message }}</li>
+  {% endfor %}
+</ul>
+{% endif %} {% endwith %}
 
 <!-- Map-Section -->
 <section class="map">

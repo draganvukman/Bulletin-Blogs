@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700&display=swap");
 
 /* CSS Reset */
 
@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.5;
@@ -58,7 +58,7 @@ a {
 
 .logo {
   display: block;
-  font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
   color: #3466f6;
   font-size: 3.6rem;
   line-height: 1;
@@ -298,7 +298,7 @@ a {
 .business-blogs-title::after,
 .health-blogs-title::after,
 .tech-blogs-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -936,7 +936,7 @@ a {
 
 .contact-title::after,
 .map-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -969,6 +969,11 @@ a {
   color: #ffffff;
 }
 
+.success-message {
+  text-align: center;
+  background: green;
+  font-size: 24px;
+}
 .map {
   margin: 10rem 0;
 }
@@ -1004,7 +1009,7 @@ a {
 }
 
 .authors-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;

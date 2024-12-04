@@ -3,7 +3,10 @@
 <!-- Health-Section-Hero -->
 <section class="health-hero-section">
   <div class="health-hero health-hero-content">
-    <img src="./images/health-hero-page.webp" alt="Health" />
+    <img
+      src="{{ url_for('static', filename='images/health-hero-page.webp') }}"
+      alt="Health"
+    />
     <div class="health-hero-title">Health Blogs & Articles</div>
   </div>
 </section>
@@ -20,26 +23,22 @@
 
       <div class="content">
         <div id="tabcontent1" data-tab="1" class="tabcontent-health active">
+          {% for blog in health_blogs %}
           <a href="#" class="health-tab-card">
             <div class="health-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Health" />
-              <p class="health-tab-card-author">John Doe</p>
+              <img
+                src="{{ url_for('static', filename='images/author-image.jpeg') }}"
+                alt="Health"
+              />
+              <p class="health-tab-card-author">{{ blog.author }}</p>
               <p class="health-tab-card-time">8 hours ago</p>
             </div>
             <div class="health-tab-card-body">
               <div class="health-tab-card-body-desc">
-                <h2 class="health-tab-card-title">
-                  Why Your Sleep Is Impacted by Electric Lights
-                </h2>
-                <p class="health-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
+                <h2 class="health-tab-card-title">{{ blog.title }}</h2>
+                <p class="health-tab-card-text">{{ blog.content }}</p>
                 <div class="health-tab-card-info">
-                  <div class="health-tab-card-tag">Health</div>
+                  <div class="health-tab-card-tag">{{ blog.category }}</div>
                   <div class="health-tab-card-read">15 min read</div>
                   <span class="health-tab-card-bookmark"
                     ><i class="fas fa-bookmark"></i
@@ -48,197 +47,29 @@
               </div>
 
               <div class="health-tab-card-body-img">
-                <img src="./images/health-blog-2.webp" alt="Health" />
+                <img
+                  src="{{ url_for('static', filename=blog.imageLink) }}"
+                  alt="{{ blog.title }}"
+                />
               </div>
             </div>
           </a>
-
-          <a href="#" class="health-tab-card">
-            <div class="health-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Health" />
-              <p class="health-tab-card-author">John Doe</p>
-              <p class="health-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="health-tab-card-body">
-              <div class="health-tab-card-body-desc">
-                <h2 class="health-tab-card-title">
-                  Why Your Sleep Is Impacted by Electric Lights
-                </h2>
-                <p class="health-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="health-tab-card-info">
-                  <div class="health-tab-card-tag">Health</div>
-                  <div class="health-tab-card-read">15 min read</div>
-                  <span class="health-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="health-tab-card-body-img">
-                <img src="./images/health-blog-2.webp" alt="Health" />
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="health-tab-card">
-            <div class="health-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Health" />
-              <p class="health-tab-card-author">John Doe</p>
-              <p class="health-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="health-tab-card-body">
-              <div class="health-tab-card-body-desc">
-                <h2 class="health-tab-card-title">
-                  Why Your Sleep Is Impacted by Electric Lights
-                </h2>
-                <p class="health-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="health-tab-card-info">
-                  <div class="health-tab-card-tag">Health</div>
-                  <div class="health-tab-card-read">15 min read</div>
-                  <span class="health-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="health-tab-card-body-img">
-                <img src="./images/health-blog-2.webp" alt="Health" />
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="health-tab-card">
-            <div class="health-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Health" />
-              <p class="health-tab-card-author">John Doe</p>
-              <p class="health-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="health-tab-card-body">
-              <div class="health-tab-card-body-desc">
-                <h2 class="health-tab-card-title">
-                  Why Your Sleep Is Impacted by Electric Lights
-                </h2>
-                <p class="health-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="health-tab-card-info">
-                  <div class="health-tab-card-tag">Health</div>
-                  <div class="health-tab-card-read">15 min read</div>
-                  <span class="health-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="health-tab-card-body-img">
-                <img src="./images/health-blog-2.webp" alt="Health" />
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="health-tab-card">
-            <div class="health-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Health" />
-              <p class="health-tab-card-author">John Doe</p>
-              <p class="health-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="health-tab-card-body">
-              <div class="health-tab-card-body-desc">
-                <h2 class="health-tab-card-title">
-                  Why Your Sleep Is Impacted by Electric Lights
-                </h2>
-                <p class="health-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="health-tab-card-info">
-                  <div class="health-tab-card-tag">Health</div>
-                  <div class="health-tab-card-read">15 min read</div>
-                  <span class="health-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="health-tab-card-body-img">
-                <img src="./images/health-blog-2.webp" alt="Health" />
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="health-tab-card">
-            <div class="health-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Health" />
-              <p class="health-tab-card-author">John Doe</p>
-              <p class="health-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="health-tab-card-body">
-              <div class="health-tab-card-body-desc">
-                <h2 class="health-tab-card-title">
-                  Why Your Sleep Is Impacted by Electric Lights
-                </h2>
-                <p class="health-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="health-tab-card-info">
-                  <div class="health-tab-card-tag">Health</div>
-                  <div class="health-tab-card-read">15 min read</div>
-                  <span class="health-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="health-tab-card-body-img">
-                <img src="./images/health-blog-2.webp" alt="Health" />
-              </div>
-            </div>
-          </a>
+          {% endfor %}
         </div>
         <div id="tabcontent2" data-tab="2" class="tabcontent-health">
+          {% for blog in health_blogs %}
           <a href="#" class="health-tab-card">
             <div class="health-tab-card-header">
               <img src="./images/author-image.jpeg" alt="Health" />
-              <p class="health-tab-card-author">John Doe</p>
+              <p class="health-tab-card-author">{{ blog.author }}</p>
               <p class="health-tab-card-time">8 hours ago</p>
             </div>
             <div class="health-tab-card-body">
               <div class="health-tab-card-body-desc">
-                <h2 class="health-tab-card-title">
-                  Why Your Sleep Is Impacted by Electric Lights
-                </h2>
-                <p class="health-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
+                <h2 class="health-tab-card-title">{{ blog.title }}</h2>
+                <p class="health-tab-card-text">{{ blog.content }}</p>
                 <div class="health-tab-card-info">
-                  <div class="health-tab-card-tag">Health</div>
+                  <div class="health-tab-card-tag">{{ blog.category }}</div>
                   <div class="health-tab-card-read">15 min read</div>
                   <span class="health-tab-card-bookmark"
                     ><i class="fas fa-bookmark"></i
@@ -247,131 +78,29 @@
               </div>
 
               <div class="health-tab-card-body-img">
-                <img src="./images/health-blog-1.webp" alt="Health" />
+                <img
+                  src="{{ url_for('static', filename=blog.imageLink) }}"
+                  alt="{{ blog.title }}"
+                />
               </div>
             </div>
           </a>
-
-          <a href="#" class="health-tab-card">
-            <div class="health-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Health" />
-              <p class="health-tab-card-author">John Doe</p>
-              <p class="health-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="health-tab-card-body">
-              <div class="health-tab-card-body-desc">
-                <h2 class="health-tab-card-title">
-                  Why Your Sleep Is Impacted by Electric Lights
-                </h2>
-                <p class="health-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="health-tab-card-info">
-                  <div class="health-tab-card-tag">Health</div>
-                  <div class="health-tab-card-read">15 min read</div>
-                  <span class="health-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="health-tab-card-body-img">
-                <img src="./images/health-blog-1.webp" alt="Health" />
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="health-tab-card">
-            <div class="health-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Health" />
-              <p class="health-tab-card-author">John Doe</p>
-              <p class="health-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="health-tab-card-body">
-              <div class="health-tab-card-body-desc">
-                <h2 class="health-tab-card-title">
-                  Why Your Sleep Is Impacted by Electric Lights
-                </h2>
-                <p class="health-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="health-tab-card-info">
-                  <div class="health-tab-card-tag">Health</div>
-                  <div class="health-tab-card-read">15 min read</div>
-                  <span class="health-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="health-tab-card-body-img">
-                <img src="./images/health-blog-1.webp" alt="Health" />
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="health-tab-card">
-            <div class="health-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Health" />
-              <p class="health-tab-card-author">John Doe</p>
-              <p class="health-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="health-tab-card-body">
-              <div class="health-tab-card-body-desc">
-                <h2 class="health-tab-card-title">
-                  Why Your Sleep Is Impacted by Electric Lights
-                </h2>
-                <p class="health-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="health-tab-card-info">
-                  <div class="health-tab-card-tag">Health</div>
-                  <div class="health-tab-card-read">15 min read</div>
-                  <span class="health-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="health-tab-card-body-img">
-                <img src="./images/health-blog-3.webp" alt="Health" />
-              </div>
-            </div>
-          </a>
+          {% endfor %}
         </div>
         <div id="tabcontent3" data-tab="3" class="tabcontent-health">
+          {% for blog in health_blogs %}
           <a href="#" class="health-tab-card">
             <div class="health-tab-card-header">
               <img src="./images/author-image.jpeg" alt="Health" />
-              <p class="health-tab-card-author">John Doe</p>
+              <p class="health-tab-card-author">{{ blog.author }}</p>
               <p class="health-tab-card-time">8 hours ago</p>
             </div>
             <div class="health-tab-card-body">
               <div class="health-tab-card-body-desc">
-                <h2 class="health-tab-card-title">
-                  Why Your Sleep Is Impacted by Electric Lights
-                </h2>
-                <p class="health-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
+                <h2 class="health-tab-card-title">{{ blog.title }}</h2>
+                <p class="health-tab-card-text">{{ blog.content }}</p>
                 <div class="health-tab-card-info">
-                  <div class="health-tab-card-tag">Health</div>
+                  <div class="health-tab-card-tag">{{ blog.category }}</div>
                   <div class="health-tab-card-read">15 min read</div>
                   <span class="health-tab-card-bookmark"
                     ><i class="fas fa-bookmark"></i
@@ -380,43 +109,14 @@
               </div>
 
               <div class="health-tab-card-body-img">
-                <img src="./images/health-blog-3.webp" alt="Health" />
+                <img
+                  src="{{ url_for('static', filename=blog.imageLink) }}"
+                  alt="{{ blog.title }}"
+                />
               </div>
             </div>
           </a>
-
-          <a href="#" class="health-tab-card">
-            <div class="health-tab-card-header">
-              <img src="./images/author-image.jpeg" alt="Health" />
-              <p class="health-tab-card-author">John Doe</p>
-              <p class="health-tab-card-time">8 hours ago</p>
-            </div>
-            <div class="health-tab-card-body">
-              <div class="health-tab-card-body-desc">
-                <h2 class="health-tab-card-title">
-                  Why Your Sleep Is Impacted by Electric Lights
-                </h2>
-                <p class="health-tab-card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime voluptas minus veniam expedita dolores at, minima
-                  praesentium eius voluptatibus deserunt aliquam quis saepe
-                  deleniti velit! Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Suscipit at modi hic cupiditate, ab vero.
-                </p>
-                <div class="health-tab-card-info">
-                  <div class="health-tab-card-tag">Health</div>
-                  <div class="health-tab-card-read">15 min read</div>
-                  <span class="health-tab-card-bookmark"
-                    ><i class="fas fa-bookmark"></i
-                  ></span>
-                </div>
-              </div>
-
-              <div class="health-tab-card-body-img">
-                <img src="./images/health-blog-3.webp" alt="Health" />
-              </div>
-            </div>
-          </a>
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -428,12 +128,12 @@
   <div class="container">
     <div class="newsletter-content">
       <img
-        src="./images/abstract-design-trimmy.png"
+        src="{{ url_for('static', filename='images/abstract-design-trimmy.png') }}"
         alt="Health"
         class="design-img-top"
       />
       <img
-        src="./images/abstract-design-trimmy.png"
+        src="{{ url_for('static', filename='images/abstract-design-trimmy.png') }}"
         alt="Health"
         class="design-img-bottom"
       />
