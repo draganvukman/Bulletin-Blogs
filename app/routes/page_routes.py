@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, jsonify
+from app import db
 from app.models import Blog
 
 page_routes = Blueprint('page_routes', __name__)
