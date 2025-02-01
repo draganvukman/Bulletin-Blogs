@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='images/blogging.png') }}"
+      type="image/x-icon"
+      sizes="24X24"
+    />
+    <!-- Font Awesome Link -->
+    <script
+      src="https://kit.fontawesome.com/6255250c8f.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <title>Bulletin - Read and Write About Your Life Experiences</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="top-navbar">
+            <a href="{{ url_for('page_routes.home') }}" class="logo"
+              ><span class="logo-text-color">Bu</span>lletin.</a
+            >
+            <div class="header-search-bar">
+              <input
+                type="search"
+                name="search"
+                id="search"
+                placeholder="Search for business, health & technology"
+              />
+              <span class="search-icon"><i class="fas fa-search"></i></span>
+            </div>
+            <div class="header-socials">
+              <a href="https://www.facebook.com"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="https://www.twitter.com"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://www.instagram.com"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.pinterest.com"
+                ><i class="fab fa-pinterest"></i
+              ></a>
+            </div>
+            <i id="mobile-menu" class="fas fa-bars"></i>
+          </div>
+          <nav class="navbar">
+            <a href="{{ url_for('page_routes.home') }}" class="navlink active"
+              >Home</a
+            >
+            <a href="{{ url_for('page_routes.business') }}" class="navlink"
+              >Business</a
+            >
+            <a href="{{ url_for('page_routes.health') }}" class="navlink"
+              >Health</a
+            >
+            <a href="{{ url_for('page_routes.technology') }}" class="navlink"
+              >Technology</a
+            >
+            <a href="{{ url_for('page_routes.authors') }}" class="navlink"
+              >Authors</a
+            >
+            <a href="{{ url_for('page_routes.contact') }}" class="navlink"
+              >Contact Us</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>{% block content %}{% endblock %}</main>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Script -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

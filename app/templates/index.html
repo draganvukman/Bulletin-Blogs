@@ -1,0 +1,295 @@
+{% extends "base.html" %} {% block content %}
+<!-- Hero-Section -->
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="swiper heroSlider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="hero-item">
+              <div class="hero-item-image">
+                <img
+                  src="{{ url_for('static', filename='images/business-hero.avif') }}"
+                />
+              </div>
+              <div class="hero-item-article">
+                <h4 class="editor-tag">Editor's Pick</h4>
+                <h2 class="article-title">
+                  Don’t Take It Personally’ Is Terrible Work Advice
+                </h2>
+                <p class="article-desc">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo
+                  perspiciatis sapiente, pariatur quaerat rerum labore,
+                  recusandae exercitationem earum esse necessitatibus facere
+                  eveniet fugit beatae accusantium!
+                </p>
+
+                <div class="article-author-info">
+                  <div class="article-author-desc">
+                    <span class="author-name">Dave Rogen</span> -
+                    <span class="article-type">Business</span>
+                  </div>
+                  <div class="article-publish-read">
+                    <span class="article-publish-date">Jun 14</span> -
+                    <span class="article-read-time"
+                      >3 min Read <i class="fas fa-star"></i
+                    ></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="hero-item">
+              <div class="hero-item-article">
+                <h4 class="editor-tag">Editor's Pick</h4>
+                <h2 class="article-title">
+                  Don’t Take It Personally’ Is Terrible Work Advice
+                </h2>
+                <p class="article-desc">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo
+                  perspiciatis sapiente, pariatur quaerat rerum labore,
+                  recusandae exercitationem earum esse necessitatibus facere
+                  eveniet fugit beatae accusantium!
+                </p>
+
+                <div class="article-author-info">
+                  <div class="article-author-desc">
+                    <span class="author-name">Dave Rogen</span> -
+                    <span class="article-type">Business</span>
+                  </div>
+                  <div class="article-publish-read">
+                    <span class="article-publish-date">Jun 14</span> -
+                    <span class="article-read-time"
+                      >3 min Read <i class="fas fa-star"></i
+                    ></span>
+                  </div>
+                </div>
+              </div>
+              <div class="hero-item-image">
+                <img
+                  src="{{ url_for('static', filename='images/health-hero.avif') }}"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="hero-item">
+              <div class="hero-item-image">
+                <img
+                  src="{{ url_for('static', filename='images/tech-hero.avif') }}"
+                />
+              </div>
+              <div class="hero-item-article">
+                <h4 class="editor-tag">Editor's Pick</h4>
+                <h2 class="article-title">
+                  Don’t Take It Personally’ Is Terrible Work Advice
+                </h2>
+                <p class="article-desc">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo
+                  perspiciatis sapiente, pariatur quaerat rerum labore,
+                  recusandae exercitationem earum esse necessitatibus facere
+                  eveniet fugit beatae accusantium!
+                </p>
+
+                <div class="article-author-info">
+                  <div class="article-author-desc">
+                    <span class="author-name">Dave Rogen</span> -
+                    <span class="article-type">Business</span>
+                  </div>
+                  <div class="article-publish-read">
+                    <span class="article-publish-date">Jun 14</span> -
+                    <span class="article-read-time"
+                      >3 min Read <i class="fas fa-star"></i
+                    ></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<!-- Business -->
+<section class="business-blogs">
+  <div class="container">
+    <h2 class="business-blogs-title">Business's Top Picks</h2>
+    <div class="business-blogs-content">
+      {% for blog in business_blogs %}
+      <a href="#" class="business-blogs-card">
+        <img
+          src="{{ url_for('static', filename=blog.imageLink) }}"
+          alt="{{ blog.title }}"
+        />
+        <div class="business-blogs-card-body">
+          <div class="business-blogs-tag">{{ blog.category }}</div>
+          <h3 class="business-blogs-card-title">{{ blog.title }}</h3>
+          <p class="business-blogs-card-text">{{ blog.content }}</p>
+          <div class="business-blogs-card-desc">
+            <div class="business-blogs-card-img">
+              <img
+                src="{{ url_for('static', filename='images/author-image.jpeg') }}"
+                alt=""
+              />
+            </div>
+            <div class="business-blogs-card-img">
+              <span class="business-blogs-card-name">{{ blog.author }}</span>
+              <span class="business-blogs-card-time">Yesterday</span>
+            </div>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <a href="{{ url_for('page_routes.business') }}" class="load-more-btn"
+      >Load More</a
+    >
+  </div>
+</section>
+
+<!-- Health -->
+<section class="health-blogs">
+  <div class="container">
+    <h2 class="health-blogs-title">Health's Top Picks</h2>
+    <div class="health-blogs-content">
+      {% for blog in health_blogs %}
+      <a href="#" class="health-blogs-card">
+        <img
+          src="{{ url_for('static', filename=blog.imageLink) }}"
+          alt="{{ blog.title }}"
+        />
+        <div class="health-blogs-card-body">
+          <div class="health-blogs-tag">{{ blog.category }}</div>
+          <h3 class="health-blogs-card-title">{{ blog.title }}</h3>
+          <p class="health-blogs-card-text">{{ blog.content }}</p>
+          <div class="health-blogs-card-desc">
+            <div class="health-blogs-card-img">
+              <img
+                src="{{ url_for('static', filename='images/author-image.jpeg') }}"
+                alt=""
+              />
+            </div>
+            <div class="health-blogs-card-img">
+              <span class="health-blogs-card-name">{{ blog.author }}</span>
+              <span class="health-blogs-card-time">Yesterday</span>
+            </div>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <a href="{{ url_for('page_routes.health') }}" class="load-more-btn"
+      >Load More</a
+    >
+  </div>
+</section>
+
+<!-- Technology -->
+<section class="tech-blogs">
+  <div class="container">
+    <h2 class="tech-blogs-title">Technology's Top Picks</h2>
+    <div class="tech-blogs-content">
+      {% for blog in technology_blogs %}
+      <a href="#" class="tech-blogs-card">
+        <img
+          src="{{ url_for('static', filename=blog.imageLink) }}"
+          alt="{{ blog.title }}"
+        />
+        <div class="tech-blogs-card-body">
+          <div class="tech-blogs-tag">{{ blog.category }}</div>
+          <h3 class="tech-blogs-card-title">{{ blog.title }}</h3>
+          <p class="tech-blogs-card-text">{{ blog.content }}</p>
+          <div class="tech-blogs-card-desc">
+            <div class="tech-blogs-card-img">
+              <img
+                src="{{ url_for('static', filename='images/author-image.jpeg') }}"
+                alt=""
+              />
+            </div>
+            <div class="tech-blogs-card-img">
+              <span class="tech-blogs-card-name">{{ blog.author }}</span>
+              <span class="tech-blogs-card-time">Yesterday</span>
+            </div>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <a href="{{ url_for('page_routes.technology') }}" class="load-more-btn"
+      >Load More</a
+    >
+  </div>
+</section>
+
+<!-- News-Letter-Section -->
+<section class="newsletter">
+  <div class="container">
+    <div class="newsletter-content">
+      <img
+        src="{{ url_for('static', filename='images/abstract-design-trimmy.png') }}"
+        alt=""
+        class="design-img-top"
+      />
+      <img
+        src="{{ url_for('static', filename='images/abstract-design-trimmy.png') }}"
+        alt=""
+        class="design-img-bottom"
+      />
+      <div class="newsletter-text">
+        <h2 class="newsletter-title">Subscribe to our Newsletter</h2>
+        <p class="newsletter-desc">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+          dignissimos modi nam molestiae maxime voluptate libero similique in
+          illo illum, delectus sit placeat ex eum!
+        </p>
+        <div class="newsletter-field">
+          <form id="newsletter-form">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Full Name"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email ID"
+              required
+            />
+            <button class="btn-submit">
+              <i class="far fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer-Section -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-socials">
+        <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.pinterest.com"><i class="fab fa-pinterest"></i></a>
+      </div>
+
+      <div class="footer-text">
+        <a href="/" class="logo"
+          ><span class="logo-text-color">Bu</span>lletin.</a
+        >
+        <p>&copy; 2022 - All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}
